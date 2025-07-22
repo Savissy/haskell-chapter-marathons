@@ -9,7 +9,7 @@ You have just finished **Chapter 19**, where we dove into the art of *applicat
 5. **Programming with effects** (`Maybe`, `IO`)
 6. **`Control.Applicative` helpers** (`pure`, `<*>`, `<$>`, `liftA2`, `optional`, etc.)
 
-Your task is to design a small **command‑line app**—**Student Eligibility Checker**—that helps school administrators determine scholarship eligibility while showcasing **every** concept above in a meaningful way.
+This marathon is to design a small **command‑line app**—**Student Eligibility Checker**—that helps school administrators determine scholarship eligibility while showcasing **every** concept above in a meaningful way.
 
 ---
 
