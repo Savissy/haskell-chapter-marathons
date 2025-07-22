@@ -1,51 +1,30 @@
-**Student Eligibility Checker Console App**
+# Student Eligibility Checker – Mini Console Project
 
-📌 Objective
-Design and implement a console-based Haskell application that checks whether a student is eligible for a scholarship based on optional inputs.
+You have just finished **Chapter 19**, where we dove into the art of *applicative programming in Haskell*:
 
-This project is meant to help you apply core concepts from Chapter 19, especially:
+1. **Function application at the Functor level**
+2. **Purity vs effectful computation**
+3. **The `Applicative` type class**
+4. **Applicative laws** (identity, composition, homomorphism, interchange)
+5. **Programming with effects** (`Maybe`, `IO`)
+6. **`Control.Applicative` helpers** (`pure`, `<*>`, `<$>`, `liftA2`, `optional`, etc.)
 
-✅ Function application at the Functor level
+Your task is to design a small **command‑line app**—**Student Eligibility Checker**—that helps school administrators determine scholarship eligibility while showcasing **every** concept above in a meaningful way.
 
-✅ Purity and effectful computation
+---
 
-✅ The Applicative type class
+### **Objectives**
 
-✅ Applicative laws
+* **Separate pure logic from `IO`** – gather user input interactively, then run validation in a side‑effect‑free pipeline.
+* **Apply applicative style elegantly** – combine optional fields with `pure`, `<$>`, `<*>`, and `liftA2` instead of explicit case analysis.
+* **Respect Haskell’s layout rule** – use clear indentation, descriptive comments, and informative **type signatures** (e.g., `Student`, `isEligible :: Student -> Maybe Bool`).
+* **Demonstrate `Maybe` as a validation context** – treat missing data (`Nothing`) naturally while propagating failure.
+* **Encode scholarship criteria declaratively** –
 
-✅ Programming with effects (Maybe, IO)
+  * GPA ≥ 3.5
+  * **and** extracurricular participation
+  * **and** (financial need **or** a recommendation letter)
+* **Leverage laziness for ergonomics** – ask only for the data you actually need.
+* **Build & test in GHCi**, then package with **Stack** or **Cabal**; document usage and build steps in a concise **README**.
 
-✅ Control.Applicative functions (pure, <*>, liftA2, optional, etc.)
-
-🎯 Task Description
-You will build a console app called Student Eligibility Checker that:
-
-Prompts the user (a school administrator) to input student details.
-
-Handles cases where some fields might be missing or skipped.
-
-Uses Maybe as an applicative to apply validation logic.
-
-Outputs whether the student is eligible based on rules below.
-
-✅ Eligibility Rules
-A student is eligible if:
-
-GPA is 3.5 or higher
-
-AND participated in extracurricular activities
-
-AND (has financial need OR has a recommendation letter)
-
-Use pure, <*>, and <$> to apply this logic over the Maybe inputs.
-
-🧠 Requirements
-Define a Student data type with appropriate fields (Maybe Float, etc.).
-
-Define a function isEligible :: Student -> Maybe Bool that uses Applicative style logic.
-
-Use pure, <*>, <$>, and optionally liftA2, sequenceA, or optional in your implementation.
-
-Use IO to read values from the console.
-
-Skip any field if the user types "skip" or enters nothing.
+Deliver a runnable console program that prompts for each field (allowing the user to *skip* any question), reports the eligibility result, and exemplifies the applicative patterns explored in Chapter 19.
